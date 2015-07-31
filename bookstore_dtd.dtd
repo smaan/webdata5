@@ -1,0 +1,19 @@
+<!ELEMENT bookstore (book+, author+, publisher+)>
+<!ELEMENT book (title, year, price, ISBN)>
+<!ATTLIST book id ID #REQUIRED>
+<!ATTLIST book written_by IDREFS #REQUIRED>
+<!ATTLIST book published_by IDREF #REQUIRED>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT ISBN (#PCDATA)>
+<!ELEMENT author (name, address, URL)>
+<!ATTLIST author id ID #REQUIRED>
+<!ATTLIST author wrote IDREFS #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT URL (#PCDATA)>
+<!ELEMENT publisher (name, address, phone, URL)>
+<!ATTLIST publisher id ID #REQUIRED>
+<!ATTLIST publisher published IDREFS #REQUIRED>
+<!ELEMENT phone (#PCDATA)>

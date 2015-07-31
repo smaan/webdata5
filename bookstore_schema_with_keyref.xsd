@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="bookstore">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="book" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="title" type="xsd:string"/>
+						<xsd:element name="year" type="xsd:gYear"/>
+						<xsd:element name="price" type="xsd:decimal"/>
+						<xsd:element name="ISBN" type="xsd:positiveInteger"/>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="xsd:string" use="required"/>
+					<xsd:attribute name="written_by" type="xsd:string" use="required"/>
+					<xsd:attribute name="published_by" type="xsd:string" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="author" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="name" type="xsd:string"/>
+						<xsd:element name="address" type="xsd:string"/>
+						<xsd:element name="URL" type="xsd:anyURI"/>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="xsd:string" use="required"/>
+					<xsd:attribute name="wrote" type="xsd:string" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="publisher" maxOccurs="unbounded">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="name" type="xsd:string"/>
+						<xsd:element name="address" type="xsd:string"/>
+						<xsd:element name="phone" type="xsd:long"/>
+						<xsd:element name="URL" type="xsd:anyURI"/>
+					</xsd:sequence>
+					<xsd:attribute name="id" type="xsd:string" use="required"/>
+					<xsd:attribute name="published" type="xsd:string" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:key name="book_k">
+		<xsd:selector xpath="book" />
+		<xsd:field xpath="@id" />
+	</xsd:key>
+	<xsd:keyref name="writer" refer="author_k">
+		<xsd:selector xpath="book" />
+		<xsd:field xpath="@written_by" />
+	</xsd:keyref>
+	<xsd:keyref name="publisher_ref" refer="publisher_k">
+		<xsd:selector xpath="book" />
+		<xsd:field xpath="@published_by" />
+	</xsd:keyref>
+	<xsd:key name="author_k">
+		<xsd:selector xpath="author" />
+		<xsd:field xpath="@id" />
+	</xsd:key>
+	<xsd:keyref name="book_w" refer="book_k">
+		<xsd:selector xpath="author" />
+		<xsd:field xpath="@wrote" />
+	</xsd:keyref>
+	<xsd:key name="publisher_k">
+		<xsd:selector xpath="publisher" />
+		<xsd:field xpath="@id" />
+	</xsd:key>
+	<xsd:keyref name="book_p" refer="book_k">
+		<xsd:selector xpath="publisher" />
+		<xsd:field xpath="@published" />
+	</xsd:keyref>
+</xsd:element>
+</xsd:schema>

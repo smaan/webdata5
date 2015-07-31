@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookstore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+xsi:noNamespaceSchemaLocation="bookstore_schema.xsd">
+	<book id="b1" written_by="a1" published_by="p1">
+		<title>Inferno</title>
+		<year>2010</year>
+		<price>50</price>
+		<ISBN>226</ISBN>
+	</book>
+	<book id="b2" written_by="a2" published_by="a2">
+		<title>If Tomorrow Comes</title>
+		<year>2011</year>
+		<price>30</price>
+		<ISBN>763</ISBN>
+	</book>
+	<book id="b3" written_by="a3" published_by="p3">
+		<title>Sherlock Holmes</title>
+		<year>2014</year>
+		<price>40</price>
+		<ISBN>712</ISBN>
+	</book>
+	<author id="a1" wrote="b1">
+		<name>Dan Brown</name>
+		<address>Dan Brown Address</address>
+		<URL>http://www.danbrown.com/</URL>
+	</author>
+	<author id="a2" wrote="b2">
+		<name>Sidney Sheldon</name>
+		<address>Sidney Sheldon address</address>
+		<URL>http://en.wikipedia.org/wiki/Sidney_Sheldon</URL>
+	</author>
+	<author id="a3" wrote="b3">
+		<name>Arthur Conan doyle</name>
+		<address>Arthur Conan doyle address</address>
+		<URL>http://www.sirarthurconandoyle.com/</URL>
+	</author>
+	<publisher id="p1" published="b1">
+		<name>Novel Publications</name>
+		<address>Novel Publications Address</address>
+		<phone>6825642121</phone>
+		<URL>http://booksxyz.com/</URL>
+	</publisher>
+	<publisher id="p2" published="b2">
+		<name>Story Books Publishers</name>
+		<address>Story Books Publishers Address</address>
+		<phone>6825644343</phone>
+		<URL>http://booksxyz.com/</URL>
+	</publisher>
+	<publisher id="p3" published="b3">
+		<name>Great Books Publishers</name>
+		<address>Great Books Publishers Address</address>
+		<phone>6825647667</phone>
+		<URL>http://booksxyz.com/</URL>
+	</publisher>
+</bookstore>

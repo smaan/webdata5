@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookstore SYSTEM "bookstore_dtd.dtd">
+<bookstore>
+	<book id="b1" written_by="a1 a2" published_by="p1">
+		<title>Inferno</title>
+		<year>2010</year>
+		<price>50</price>
+		<ISBN>226</ISBN>
+	</book>
+	<book id="b2" written_by="a2 a3" published_by="p2">
+		<title>If Tomorrow Comes</title>
+		<year>2011</year>
+		<price>30</price>
+		<ISBN>763</ISBN>
+	</book>
+	<book id="b3" written_by="a1 a3" published_by="p1">
+		<title>Sherlock Holmes</title>
+		<year>2014</year>
+		<price>40</price>
+		<ISBN>712</ISBN>
+	</book>
+	<author id="a1" wrote="b1 b3">
+		<name>Dan Brown</name>
+		<address>Dan Brown Address</address>
+		<URL>http://www.danbrown.com/</URL>
+	</author>
+	<author id="a2" wrote="b1 b2">
+		<name>Sidney Sheldon</name>
+		<address>Sidney Sheldon address</address>
+		<URL>http://en.wikipedia.org/wiki/Sidney_Sheldon</URL>
+	</author>
+	<author id="a3" wrote="b2 b3">
+		<name>Arthur Conan doyle</name>
+		<address>Arthur Conan doyle address</address>
+		<URL>http://www.sirarthurconandoyle.com/</URL>
+	</author>
+	<publisher id="p1" published="b1 b3">
+		<name>Novel Publications</name>
+		<address>Novel Publications Address</address>
+		<phone>6825642121</phone>
+		<URL>NovelPublicationsURL</URL>
+	</publisher>
+	<publisher id="p2" published="b2">
+		<name>Story Books Publishers</name>
+		<address>Story Books Publishers Address</address>
+		<phone>6825644343</phone>
+		<URL>StoryBooksPublishersURL</URL>
+	</publisher>
+</bookstore>
